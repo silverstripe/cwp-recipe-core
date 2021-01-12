@@ -1,26 +1,10 @@
-language: php
+version: ~> 1.0
 
-dist: trusty
+import:
+  - silverstripe/silverstripe-travis-shared:config/provision/self-jobs-range.yml
 
 env:
   global:
-    - COMPOSER_ROOT_VERSION="2.5.x-dev" DB=MYSQL
-
-php:
-  - 7.1
-  - 7.2
-  - 7.3
-
-before_script:
-  - phpenv rehash
-  - phpenv config-rm xdebug.ini
-
-  - composer validate
-  - composer require --no-update silverstripe/versioned:1.5.x-dev
-  - composer install --prefer-source --no-interaction --no-progress --no-suggest --optimize-autoloader --verbose --profile
-
-  - composer global require silverstripe/cow ^2
-  - ~/.config/composer/vendor/bin/cow schema:validate
-
-script:
-  - vendor/bin/phpunit --testsuite cwp-recipe-core
+    - COMPOSER_ROOT_VERSION="2.x-dev"
+    - REQUIRE_EXTRA="silverstripe/versioned:1.x-dev"
+    - PHPUNIT_SUITE="cwp-recipe-core"
