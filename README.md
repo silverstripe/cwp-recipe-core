@@ -1,3 +1,7 @@
+# DEPRECATED
+
+This package is no longer in-use. Use [`silverstripe/recipe-ccl`](https://github.com/silverstripe/recipe-ccl) instead.
+
 ## CWP Core Recipe
 
 [![Build Status](https://api.travis-ci.com/silverstripe/cwp-recipe-core.svg?branch=2)](https://travis-ci.com/silverstripe/cwp-recipe-core)
